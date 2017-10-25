@@ -1,0 +1,83 @@
+body {
+	margin-bottom: 2rem;
+}
+
+.container-main {
+	padding: 0;
+}
+
+.container-main .park-row {
+	margin-bottom: 2rem;
+}
+
+.container-main .park-row:first-child {
+	margin-top: 2rem;
+}
+
+h2 a {
+    color: black;
+}
+
+h2 a:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+.park-page-img {
+	margin-bottom: 1rem;
+}
+
+.parallax {
+	min-height: 500px;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.weather {
+    text-align: center;
+}
+
+.weather .today-weather {
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.weather-img {
+	display: block;
+	margin: 0 auto;
+}
+
+#unit-form {
+	max-width: 25%;
+	margin: 0 auto;	
+	background-color: #63A7B4;
+	padding: 0.5rem 1rem;
+}
+
+#unit-form label {
+	color: white;
+}
+
+#unit-form-submit {
+	margin-top: 1rem;
+}
+
+#unit-form-submit:hover {
+	cursor: pointer;
+}
+
+#unit-form .btn-success {
+	background-color: #044C5A;
+	border-color: #044C5A;
+}
+
+#survey-form .form-check {
+	padding-left: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+	.weather .today-weather {
+		border-right: none;
+	}
+}
