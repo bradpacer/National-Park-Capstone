@@ -29,7 +29,7 @@
 <div class="parallax" style="background-image: url(${imageUrl})">
 </div>
 
-<div class="container">
+<div class="container park-container">
 	<div>
 		<h2>
 			<c:out value="${park.name}" />

@@ -35,6 +35,19 @@ h2 a:hover {
     background-size: cover;
 }
 
+.park-container {
+	margin-top: 1rem;
+}
+
+.blockquote {
+	max-width: 75%;
+	margin: 0 auto;
+}
+
+.blockquote-footer {
+	margin-bottom: 1rem;
+}
+
 .weather {
     text-align: center;
 }
@@ -74,6 +87,28 @@ h2 a:hover {
 
 #survey-form .form-check {
 	padding-left: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+	.header-container {
+		display: block;
+	}
+	.mobile-logo-link {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.header-container {
+		display:none;
+	}
+	.mobile-logo-link {
+		display: block;
+		max-width: 35%;
+	}
+	#unit-form {
+		max-width: 50%;
+	}
 }
 
 @media screen and (max-width: 767px) {

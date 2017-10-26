@@ -9,17 +9,12 @@ public class Weather {
 	private int high;
 	private String forecast;
 	
-	private int displayLow;
-	private int displayHigh;
-	
 	public Weather(String parkCode, int fiveDayValue, int low, int high, String forecast) {
 		this.parkCode = parkCode;
 		this.fiveDayValue = fiveDayValue;
 		this.low = low;
 		this.high = high;
 		this.forecast = forecast;
-		this.setDisplayLow(low);
-		this.setDisplayHigh(high);
 	}
 	
 	public String getParkCode() {
@@ -100,21 +95,4 @@ public class Weather {
 		
 		return recommendation;
 	}
-
-	public int getDisplayLow() {
-		return displayLow;
-	}
-
-	public void setDisplayLow(int displayLow) {
-		this.displayLow = displayLow;
-	}
-
-	public int getDisplayHigh() {
-		return displayHigh;
-	}
-
-	public void setDisplayHigh(int displayHigh) {
-		this.displayHigh = displayHigh;
-	}
-	
 }

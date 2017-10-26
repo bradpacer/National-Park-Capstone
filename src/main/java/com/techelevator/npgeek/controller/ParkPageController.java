@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.npgeek.dao.ParkDao;
 import com.techelevator.npgeek.dao.WeatherDao;
@@ -44,12 +45,14 @@ public class ParkPageController {
 	}
 	
 	@RequestMapping(path="/setUnit", method=RequestMethod.POST)
-	public String updateUnits(@RequestParam String unit, @RequestParam String code, ModelMap model, HttpServletRequest request) {
+	public String updateUnits(@RequestParam String unit, @RequestParam String code, ModelMap model, HttpServletRequest request, RedirectAttributes attrs) {
 		if (unit.equals("c")) {
 			model.addAttribute("unitCharacter", "C");
 		} else {
 			model.addAttribute("unitCharacter", "F");
 		}
-		return "redirect:/park?code=" + code;
+		
+		attrs.addAttribute("code", code);
+		return "redirect:/park";
 	}
 }
