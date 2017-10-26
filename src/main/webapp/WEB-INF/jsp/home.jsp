@@ -14,11 +14,11 @@
 		<%-- end variables --%>
 
 		<div class="row park-row">
-			<div class="col-6">
+			<div class="col-sm-12 col-md-6">
 				<a href="${parkUrl}"> <img src="${imageUrl}" class="img-fluid" />
 				</a>
 			</div>
-			<div class="col-6">
+			<div class="col-sm-12 col-md-6">
 				<h2>
 					<a href="${parkUrl}"> <c:out value="${park.name}" />
 					</a>
@@ -28,6 +28,7 @@
 				</p>
 			</div>
 		</div>
+		<hr>
 	</c:forEach>
 </div>
 
