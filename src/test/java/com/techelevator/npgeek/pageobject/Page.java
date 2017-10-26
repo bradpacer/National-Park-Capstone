@@ -1,6 +1,7 @@
 package com.techelevator.npgeek.pageobject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -14,12 +15,13 @@ public class Page {
 
 	public void clickParkLink(String parkName) {
 		WebElement link = webDriver.findElement(By.linkText(parkName));
-		link.click();
+		link.sendKeys(Keys.RETURN);
 	}
 
 	public void goToGivenPage(String name) {
 		WebElement link = webDriver.findElement(By.linkText(name));
-		link.click();	
+		// see https://stackoverflow.com/questions/11908249/debugging-element-is-not-clickable-at-point-error#comment50592465_19763087
+		link.sendKeys(Keys.RETURN);	
 	}
 
 	public void switchToCelsius() {
@@ -40,7 +42,7 @@ public class Page {
 	public boolean isCelsius() {
 		WebElement temp = webDriver.findElement(By.cssSelector(".today-weather p"));
 		String tempText = temp.getText();
-		String unit = tempText.substring(tempText.length() - 2);
+		String unit = tempText.substring(tempText.length() - 1);
 		return (unit.equals("C"));
 	}
 

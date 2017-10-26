@@ -15,11 +15,11 @@ Feature: park geek
 	
 	Scenario: View survey page
 	Given I am on the home page
-	When I click the survey link
+	When I click the Survey link
 	Then I am sent to the survey page
 	
 	Scenario: Submit the survey
-	Given I am on the survey page
+	Given I am on the Survey page
 	When I choose park Glacier National Park
 	And I enter the email brad@gmail.com
 	And I choose the state OH
@@ -28,8 +28,8 @@ Feature: park geek
 	Then I am sent to the survey results page
 	
 	Scenario: View home page
-	Given I am on the survey page
-	When I click the home link
+	Given I am on the Survey page
+	When I click the Home link
 	Then I am sent to the home page
 
 

@@ -25,13 +25,15 @@ public class Hooks {
 		String homeDir = System.getProperty("user.home");
 		System.setProperty("webdriver.chrome.driver", homeDir + "/dev-tools/chromedriver/chromedriver");
 		webDriver = new ChromeDriver();
-		page = new Page(webDriver);
+		
 	}
 
 	@Before
 	public void setup() {
 		webDriver.manage().deleteAllCookies();
-		webDriver.get("http://localhost:8080/m3-java-capstone/");
+//		webDriver.get("http://localhost:8080/m3-java-capstone/");
+		webDriver.get("http://localhost:8080/m3-capstone-java/");
+		page = new Page(webDriver);
 	}
 
 	@AfterClass
@@ -51,8 +53,8 @@ public class Hooks {
 
 	@Given("^I am on the (.*) page$")
 	public void onTheGivenPage(String name) {
-		webDriver.get("http://localhost:8080/m3-java-capstone/");
-
+//		webDriver.get("http://localhost:8080/m3-java-capstone/");
+		webDriver.get("http://localhost:8080/m3-capstone-java/");
 		if (!name.equals("home")) {
 			page.goToGivenPage(name);
 		}
