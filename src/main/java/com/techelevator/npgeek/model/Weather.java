@@ -64,17 +64,17 @@ public class Weather {
 		
 		if (fiveDayValue == 2) {
 			return "Tomorrow";
-		} else if (dayOfWeek == 1) {
+		} else if (dayOfWeek % 7 == 1) {
 			return "Sunday";
-		} else if (dayOfWeek == 2) {
+		} else if (dayOfWeek % 7 == 2) {
 			return "Monday";
-		} else if (dayOfWeek == 3) {
+		} else if (dayOfWeek % 7 == 3) {
 			return "Tuesday";
-		} else if (dayOfWeek == 4) {
+		} else if (dayOfWeek % 7== 4) {
 			return "Wednesday";
-		} else if (dayOfWeek == 5) {
+		} else if (dayOfWeek % 7 == 5) {
 			return "Thursday";
-		} else if (dayOfWeek == 6) {
+		} else if (dayOfWeek % 7 == 6) {
 			return "Friday";
 		} else {
 			return "Saturday";
