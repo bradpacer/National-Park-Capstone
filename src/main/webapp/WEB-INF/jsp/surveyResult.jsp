@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp">
 	<c:param name="pageTitle" value="Survey Results" />
@@ -23,11 +25,11 @@
 		<%-- end variables --%>
 		
 		<div class="row park-row">
-			<div class="col-6">
+			<div class="col-sm-12 col-md-6">
 				<a href="${parkUrl}"> <img src="${imageUrl}" class="img-fluid" />
 				</a>
 			</div>
-			<div class="col-6">
+			<div class="col-sm-12 col-md-6">
 				<h2>
 					<a href="${parkUrl}"><c:out value="${rank}"/>) <c:out value="${park.name}" />
 					</a>
@@ -36,6 +38,7 @@
 				<p><c:out value="${park.description}" /></p>
 			</div>
 		</div>
+		<hr>
 		<c:set var="rank" value="${rank + 1}"/>
 	</c:forEach>
 	

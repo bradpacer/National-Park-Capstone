@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp">
 	<c:param name="pageTitle" value="${park.name}" />
@@ -91,10 +93,10 @@
 				<img src="${todaysWeatherUrl}" class="img-fluid weather-img"/>
 				<p>
 					High: 
-					<fmt:formatNumber type="number" maxFractionDigits = "0" value="${todaysHigh}"/>°<c:out value="${unitCharacter}"/> 
+					<fmt:formatNumber type="number" maxFractionDigits = "0" value="${todaysHigh}"/>Â°<c:out value="${unitCharacter}"/> 
 					<br/>
 					Low: 
-					<fmt:formatNumber type="number" maxFractionDigits = "0" value="${todaysLow}"/>°<c:out value="${unitCharacter}"/></p>
+					<fmt:formatNumber type="number" maxFractionDigits = "0" value="${todaysLow}"/>Â°<c:out value="${unitCharacter}"/></p>
 				<p class="recommendation"><strong>Recommendation:</strong> <c:out value="${todaysWeather.recommendation}"/></p>
 			</div>
 			<div class="col-md-8">
@@ -118,9 +120,9 @@
 						<div class="col-3 future-weather">
 							<p><strong>${weather.dayOfWeek}</strong></p>
 							<img src="${weatherImage}" class="img-fluid weather-img"/>
-							<p>High: <fmt:formatNumber type="number" maxFractionDigits = "0" value="${thisHigh}"/>°<c:out value="${unitCharacter}"/>
+							<p>High: <fmt:formatNumber type="number" maxFractionDigits = "0" value="${thisHigh}"/>Â°<c:out value="${unitCharacter}"/>
 								<br/>
-								Low: <fmt:formatNumber type="number" maxFractionDigits = "0" value="${thisLow}"/>°<c:out value="${unitCharacter}"/>
+								Low: <fmt:formatNumber type="number" maxFractionDigits = "0" value="${thisLow}"/>Â°<c:out value="${unitCharacter}"/>
 							</p>
 						</div>
 					</c:forEach>
