@@ -1,5 +1,9 @@
 package com.techelevator.npgeek.model;
 
+import java.sql.Date;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.ZoneOffset;
 import java.util.Calendar;
 
 public class Weather {
@@ -57,11 +61,22 @@ public class Weather {
 	}
 	
 	public String getDayOfWeek() {
+		Clock clock = Clock.system(ZoneOffset.systemDefault());
+		return getDayOfWeek(clock);
+	}
+	
+	/**
+	 * This version of the method takes a clock parameter for testing purposes
+	 * @param clock
+	 * @return
+	 */
+	public String getDayOfWeek(Clock clock) {
 		Calendar now = Calendar.getInstance();
-		
+		now.setTime(Date.valueOf(LocalDate.now(clock)));
+
 		// get today's dayOfWeek, add the fiveDayValue offset, then subtract 1 (because today is 1)
 		int dayOfWeek = now.get(Calendar.DAY_OF_WEEK) + fiveDayValue - 1;
-		
+
 		if (fiveDayValue == 2) {
 			return "Tomorrow";
 		} else if (dayOfWeek % 7 == 1) {
