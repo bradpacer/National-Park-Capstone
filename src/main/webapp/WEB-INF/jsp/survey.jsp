@@ -91,16 +91,16 @@
 			<label for="activity" class="col-4 col-form-label">Activity Level</label>
 			<div class="col-8">
 				<div class="form-check">
-					<input class="form-check-input" type="radio" name="activity" value="inactive"/> Inactive
+					<input id="inactive" class="form-check-input" type="radio" name="activity" value="inactive"/> Inactive
 				</div>
 				<div class="form-check">
-					<input class="form-check-input" type="radio" name="activity" value="sedentary"/> Sedentary
+					<input id="sedentary"class="form-check-input" type="radio" name="activity" value="sedentary"/> Sedentary
 				</div>
 				<div class="form-check">
-					<input class="form-check-input" type="radio" name="activity" value="active"/> Active
+					<input id="active" class="form-check-input" type="radio" name="activity" value="active"/> Active
 				</div>
 				<div class="form-check">
-					<input class="form-check-input" type="radio" name="activity" value="extremelyActive"/> Extremely Active
+					<input id="extremelyActive" class="form-check-input" type="radio" name="activity" value="extremelyActive"/> Extremely Active
 				</div>
 			</div>
 			

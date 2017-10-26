@@ -22,8 +22,7 @@
 			</div>
 			<div class="col-sm-12 col-md-6">
 				<h2>
-					<a href="${parkUrl}"> <c:out value="${park.name}" />
-					</a>
+					<a href="${parkUrl}"><c:out value="${park.name}" /></a>
 				</h2>
 				<p>
 					<c:out value="${park.description}" />

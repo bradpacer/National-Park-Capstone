@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.techelevator.npgeek.pageobject.Page;
+
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -14,15 +16,16 @@ import cucumber.api.java.en.When;
 
 public class Hooks {
 
-	private static @Autowired WebDriver webDriver;
+	private Page page;
+
+	private @Autowired WebDriver webDriver;
 
 	@BeforeClass
-	public static void openWebBrowserForTesting() {
-
+	public void openWebBrowserForTesting() {
 		String homeDir = System.getProperty("user.home");
-
 		System.setProperty("webdriver.chrome.driver", homeDir + "/dev-tools/chromedriver/chromedriver");
 		webDriver = new ChromeDriver();
+		page = new Page(webDriver);
 	}
 
 	@Before
@@ -32,13 +35,8 @@ public class Hooks {
 	}
 
 	@AfterClass
-	public static void closeWebBrowser() {
+	public void closeWebBrowser() {
 		webDriver.close();
-	}
-
-	@Given("^I am on the home page$")
-	public void goToTheHomePage() {
-		webDriver.get("http://localhost:8080/m3-java-capstone/");
 	}
 
 	@When("^ I click on the (.*) link$")
@@ -46,14 +44,19 @@ public class Hooks {
 		page.clickParkLink(parkName);
 	}
 
-	@Then("^I am on the (.*) page$")
+	@Then("^I am sent to the (.*) page$")
 	public void onGivenPage(String name) {
 		Assert.assertTrue("Should be on the selected page", page.isOn(name));
 	}
 
 	@Given("^I am on the (.*) page$")
 	public void onTheGivenPage(String name) {
-		page.goToGivenPage(name);
+		webDriver.get("http://localhost:8080/m3-java-capstone/");
+
+		if (!name.equals("home")) {
+			page.goToGivenPage(name);
+		}
+
 	}
 
 	@When("^I select celsius from the choose a unit$")
@@ -71,7 +74,7 @@ public class Hooks {
 		Assert.assertTrue("temperature should be in celsius", page.isCelsius());
 	}
 
-	@When("^I choose (.*)$")
+	@When("^I choose park (.*)$")
 	public void selectGlacierPark(String parkName) {
 		page.choosePark(parkName);
 	}
@@ -86,38 +89,15 @@ public class Hooks {
 		page.choosePark(state);
 
 	}
-	
+
 	@When("^I choose the activity level (.*)$")
 	public void chooseActivityLevel(String activityLevel) {
 		page.choosePark(activityLevel);
 	}
-	
+
 	@When("^I click submit$")
 	public void clickSubmit() {
-		page.clickSubmit();
+		page.submitSurvey();
 	}
-	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
