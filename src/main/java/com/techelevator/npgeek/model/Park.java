@@ -118,4 +118,5 @@ public class Park {
 	public void setNumberOfSurveys(int numberOfSurveys) {
 		this.numberOfSurveys = numberOfSurveys;
 	}
+
 }
