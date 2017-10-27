@@ -25,13 +25,14 @@ public class Hooks {
 		String homeDir = System.getProperty("user.home");
 		System.setProperty("webdriver.chrome.driver", homeDir + "/dev-tools/chromedriver/chromedriver");
 		webDriver = new ChromeDriver();
-		page = new Page(webDriver);
+		
 	}
 
 	@Before
 	public void setup() {
 		webDriver.manage().deleteAllCookies();
-		webDriver.get("http://localhost:8080/m3-java-capstone/");
+		webDriver.get("http://localhost:8080/m3-capstone-java/");
+		page = new Page(webDriver);
 	}
 
 	@AfterClass
@@ -39,9 +40,9 @@ public class Hooks {
 		webDriver.close();
 	}
 
-	@When("^ I click on the (.*) link$")
+	@When("^I click on the (.*) link$")
 	public void clickOnParkLink(String parkName) {
-		page.clickParkLink(parkName);
+		onTheGivenPage(parkName);
 	}
 
 	@Then("^I am sent to the (.*) page$")
@@ -51,7 +52,7 @@ public class Hooks {
 
 	@Given("^I am on the (.*) page$")
 	public void onTheGivenPage(String name) {
-		webDriver.get("http://localhost:8080/m3-java-capstone/");
+		webDriver.get("http://localhost:8080/m3-capstone-java/");
 		if (!name.equals("home")) {
 			page.goToGivenPage(name);
 		}
@@ -78,20 +79,20 @@ public class Hooks {
 		page.choosePark(parkName);
 	}
 
-	@When("^I enter the email (.*) $")
+	@When("^I enter the email (.*)$")
 	public void enterEmail(String email) {
-		page.choosePark(email);
+		page.enterEmail(email);
 	}
 
 	@When("^I choose the state (.*)$")
 	public void chooseState(String state) {
-		page.choosePark(state);
+		page.chooseState(state);
 
 	}
 
 	@When("^I choose the activity level (.*)$")
 	public void chooseActivityLevel(String activityLevel) {
-		page.choosePark(activityLevel);
+		page.chooseActivity(activityLevel);
 	}
 
 	@When("^I click submit$")
