@@ -13,14 +13,8 @@ public class Page {
 		this.webDriver = webDriver;
 	}
 
-	public void clickParkLink(String parkName) {
-		WebElement link = webDriver.findElement(By.linkText(parkName));
-		link.sendKeys(Keys.RETURN);
-	}
-
 	public void goToGivenPage(String name) {
 		WebElement link = webDriver.findElement(By.linkText(name));
-		// see https://stackoverflow.com/questions/11908249/debugging-element-is-not-clickable-at-point-error#comment50592465_19763087
 		link.sendKeys(Keys.RETURN);	
 	}
 
@@ -49,6 +43,7 @@ public class Page {
 	public void choosePark(String park) {
 		Select dropdown = new Select(webDriver.findElement(By.name("park")));
 		dropdown.selectByVisibleText(park);
+		webDriver.findElement(By.name("park")).sendKeys(Keys.TAB);
 	}
 
 	public void enterEmail(String email) {
@@ -62,7 +57,7 @@ public class Page {
 	}
 
 	public void chooseActivity(String activity) {
-		WebElement activityButton = webDriver.findElement(By.id(activity));
+		WebElement activityButton = webDriver.findElement(By.id(activity.toLowerCase()));
 		activityButton.click();	}
 
 	public void submitSurvey() {

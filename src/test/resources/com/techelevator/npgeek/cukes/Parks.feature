@@ -15,7 +15,7 @@ Feature: park geek
 	
 	Scenario: View survey page
 	Given I am on the home page
-	When I click the Survey link
+	When I click on the Survey link
 	Then I am sent to the survey page
 	
 	Scenario: Submit the survey
@@ -29,7 +29,7 @@ Feature: park geek
 	
 	Scenario: View home page
 	Given I am on the Survey page
-	When I click the Home link
+	When I click on the Home link
 	Then I am sent to the home page
 
 
