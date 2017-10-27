@@ -22,33 +22,35 @@
 </head>
 
 <body>
-
-	<div class="container header-container">
-		<div class="row">
-			<div class="col-3">
-				<a href="${homeUrl}"> <img src="${logo}" class="img-fluid" />
-				</a>
-			</div>
-		</div>
-
-	</div>
-	<nav class="navbar navbar-expand-lg navbar-light bg-success text-light">
-		<div class="container">
-		<a href="${homeUrl}" class="mobile-logo-link"> <img src="${logo}" class="img-fluid"/>
-				</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#main-nav"
-				aria-controls="main-nav" aria-expanded="false">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="main-nav">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="${homeUrl }">Home</a> <a
-						class="nav-item nav-link" href="${surveyUrl}">Survey</a>
+	<div class="header">
+		<div class="container header-container">
+			<div class="row">
+				<div class="col-3">
+					<a href="${homeUrl}"> <img src="${logo}" class="img-fluid" />
+					</a>
 				</div>
 			</div>
+	
 		</div>
-	</nav>
+		<nav class="navbar navbar-expand-lg navbar-light bg-success text-light">
+			<div class="container">
+			<a href="${homeUrl}" class="mobile-logo-link"> <img src="${logo}" class="img-fluid"/>
+					</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#main-nav"
+					aria-controls="main-nav" aria-expanded="false">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="main-nav">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" href="${homeUrl }">Home</a> <a
+							class="nav-item nav-link" href="${surveyUrl}">Survey</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	
 
 
 

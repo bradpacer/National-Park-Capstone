@@ -2,6 +2,19 @@ body {
 	margin-bottom: 2rem;
 }
 
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.header-container {
+    background-color: white;
+}
+
 .container-main {
 	padding: 0;
 }
@@ -96,6 +109,9 @@ h2 a:hover {
 	.mobile-logo-link {
 		display: none;
 	}
+	.container-main {
+		margin-top: 150px;
+	}
 }
 
 @media screen and (max-width: 991px) {
@@ -106,12 +122,18 @@ h2 a:hover {
 		display: block;
 		max-width: 35%;
 	}
+	.container-main {
+		margin-top: 100px;
+	}
 	#unit-form {
 		max-width: 50%;
 	}
 }
 
 @media screen and (max-width: 767px) {
+	.container-main {
+		margin-top: 75px;
+	}
 	.weather .today-weather {
 		border-right: none;
 	}
